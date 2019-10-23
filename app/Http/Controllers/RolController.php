@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\UploadFile;
+use App\Rol;
 use Illuminate\Http\Request;
 
-class UploadFileController extends Controller
+class RolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class UploadFileController extends Controller
      */
     public function index()
     {
-        $files = UploadFile::all();
+        $roles = Rol::all();
 
-        return view('uploadfiles.index', compact('files'));
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -43,10 +43,10 @@ class UploadFileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UploadFile  $uploadFile
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function show(UploadFile $uploadFile)
+    public function show(Rol $rol)
     {
         //
     }
@@ -54,10 +54,10 @@ class UploadFileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UploadFile  $uploadFile
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function edit(UploadFile $uploadFile)
+    public function edit(Rol $rol)
     {
         //
     }
@@ -66,10 +66,10 @@ class UploadFileController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UploadFile  $uploadFile
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UploadFile $uploadFile)
+    public function update(Request $request, Rol $rol)
     {
         //
     }
@@ -77,10 +77,10 @@ class UploadFileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UploadFile  $uploadFile
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UploadFile $uploadFile)
+    public function destroy(Rol $rol)
     {
         //
     }

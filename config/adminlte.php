@@ -130,29 +130,28 @@ return [
     'menu' => [
         [
             'header' => 'main_navigation',
-            'roles' => ['super-Admin'],
         ],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/users',
-            'roles'  => 'super-Admin',
+            'url'  => '/users',
+            'roles'  => ['super-Admin', 'admin-users', 'Invitado'],
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Roles',
-            'url'  => 'admin/roles',
-            'roles'  => 'super-Admin',
+            'url'  => '/roles',
+            'roles'  => ['super-Admin', 'admin-roles', 'Invitado'],
             'icon' => 'fas fa-user-tag',
         ],
         [
             'text' => 'Permisos',
-            'url'  => 'admin/permisos',
-            'roles'  => 'super-Admin',
+            'url'  => '/permisos',
+            'roles'  => ['super-Admin', 'admin-permisos', 'Invitado'],
         ],
         [
             'text' => 'Archivos',
-            'url'  => 'admin/permisos',
-            'roles'  => 'super-Admin',
+            'url'  => '/files',
+            'roles'  => ['super-Admin', 'Invitado'],
         ],
     ],
 
@@ -176,6 +175,8 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
+        App\MenuFilters\RoleMenuFilter::class,
+
     ],
 
     /*
@@ -197,6 +198,29 @@ return [
             'name' => 'Datatables',
             'active' => true,
             'files' => [
+
+
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/1.10.20/js/dataTables.semanticui.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/1.10.20/css/dataTables.semanticui.min.css',
+                ],
+
                 [
                     'type' => 'js',
                     'asset' => false,

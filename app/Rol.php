@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UploadFile extends Model
+class Rol extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'upload_files';
+    protected $table = 'roles';
 
     /**
      * The attributes that are mass assignable.
@@ -19,10 +19,12 @@ class UploadFile extends Model
      * @var array
      */
     protected $fillable = [
-        'titulo',
-        'descripcion',
-        'nombre',
-        'ruta'
+        'name',
     ];
+
+    public function permisos()
+    {
+        return $this->belongsToMany(Permiso::class, 'role_has_permissions', 'role_id', 'permission_id');
+    }
 
 }
